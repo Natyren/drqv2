@@ -30,10 +30,7 @@ from drqv2.video import TrainVideoRecorder, VideoRecorder
 from metaworld.envs import ALL_V2_ENVIRONMENTS_GOAL_OBSERVABLE
 
 from models import ConvPolicy, Policy
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
-torch.backends.cudnn.benchmark = True
-
+device = torch.device('cuda')# if torch.cuda.is_available() else 'cpu')
 
 def make_agent(obs_spec, action_spec, cfg):
     cfg.obs_shape = obs_spec.shape
